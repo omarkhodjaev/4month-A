@@ -3,7 +3,9 @@ const inputEl = document.querySelector("#saerch-inp");
 const BtnEl = document.querySelector("#search-btn");
 const not_found = document.querySelector("#not_found");
 const foundedWord = document.querySelector("#result-word")
-const definition_box = document.querySelector("#definition")
+const definition = document.querySelector("#definition")
+const example = document.querySelector("#example")
+
 
 
 BtnEl.addEventListener("click", e => {
@@ -30,7 +32,24 @@ BtnEl.addEventListener("click", e => {
         }
 
         foundedWord.innerText = inputEl.value;
-        
+
+        data[0].meanings[0].definitions.forEach( d => {
+            // if()   
+            not_found.innerHTML += `<p class="definition">${d.definition}</p> </br>`
+            if(d.example){
+                not_found.innerHTML += `<i class="example">Example: "${d.example}"</i> </br></br>`
+            } 
+
+        });
+
+
+    //    if(data[0].meanings[0].definitions[0].example){
+    //     let exampleData = data[0].meanings[0].definitions[0].example
+    //     example.innerHTML = exampleData;
+    //    }
+
+
+
     }
 
 
