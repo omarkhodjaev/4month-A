@@ -22,7 +22,7 @@ BtnEl.addEventListener("click", e => {
     dataGet(word);
 
     not_found.className = "not_found";
-
+    not_found.innerHTML = ""
 });
 
 
