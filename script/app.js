@@ -8,6 +8,8 @@ const example = document.querySelector("#example")
 
 
 
+
+
 BtnEl.addEventListener("click", e => {
     e.preventDefault();
     const word = inputEl.value;
@@ -18,13 +20,15 @@ BtnEl.addEventListener("click", e => {
     }
     
     dataGet(word);
+
+    not_found.className = "not_found";
+
 });
 
 
 async function dataGet (word) {
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         const data  = await response.json();
-        console.log(data)
 
         if(!data.length){
             not_found.innerText = "No results"
@@ -42,11 +46,21 @@ async function dataGet (word) {
 
         });
 
+       const audio = data[0].phonetics.forEach( e=> {
+        const player = document.createElement("audio")
+           
+        if(e.audio !== ""){
+            if(e.audio){
+                player.src = e.audio
+                player.setAttribute("controls","") 
+                not_found.appendChild(player)
+            }
+        }
+         
+       })
+       
 
     }
 
-    
 
-
-
-
+ 

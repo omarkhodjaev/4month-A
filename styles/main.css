@@ -1,56 +1,89 @@
 @import url(../fonts/fonts.css);
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Inter', sans-serif;
+body {
+  font-family: "Inter", sans-serif;
 }
 
-.container{
-    width: 1240px;
-    padding: 40px;
-    margin: 0 auto;
+.container {
+  width: 1240px;
+  padding: 40px;
+  margin: 0 auto;
 }
 
-.form__wrapper{
+.form__wrapper {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+}
+
+.search__input {
+  width: 1104px;
+  padding: 16px 0px 16px 33px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.search__input::placeholder{
+    font-size: 16px;
+}
+
+.search__btn {
+  width: 158px;
+  height: 52px;
+  margin-left: 30px;
+  color: #ffffff;
+  background: #111111;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  cursor: pointer;
+}
+.search__btn:active{
+    background-color: #3e3e3e;
+}
+
+.not_found {
+  width: 100%;
+  margin-top: 60px;
+  background: #ffffff;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.11);
+  border-radius: 14px;
+  padding: 30px;
+}
+
+.definition{
     margin-top: 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.heading{
-    text-align: center;
     font-weight: 400;
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 16px;
+    line-height: 19px;
     color: #000000;
 }
-
-.search__input{
-    width: 1104px;
-    padding: 16px 0px 16px  33px;
-    border: none;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-}
-
-.search__btn{
-    width: 158px;
-    height: 52px;
+.example{
     margin-left: 30px;
-    color: #FFFFFF;
-    background: #111111;
-    border-radius: 12px;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
 }
-
+audio{
+    margin: 10px 30px 10px 0px;
+}
 
