@@ -10,8 +10,8 @@ const example = document.querySelector("#example")
 
 BtnEl.addEventListener("click", e => {
     e.preventDefault();
-
     const word = inputEl.value;
+
     if(word === ""){
         alert('Please type a word');
         return;
@@ -21,7 +21,7 @@ BtnEl.addEventListener("click", e => {
 });
 
 
-    async function dataGet (word) {
+async function dataGet (word) {
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         const data  = await response.json();
         console.log(data)
@@ -31,10 +31,10 @@ BtnEl.addEventListener("click", e => {
             return;
         }
 
-        foundedWord.innerText = inputEl.value;
+        foundedWord.innerText = `${inputEl.value} - ${data[0].phonetics[0].text}`;
 
         data[0].meanings[0].definitions.forEach( d => {
-            // if()   
+            
             not_found.innerHTML += `<p class="definition">${d.definition}</p> </br>`
             if(d.example){
                 not_found.innerHTML += `<i class="example">Example: "${d.example}"</i> </br></br>`
@@ -43,14 +43,9 @@ BtnEl.addEventListener("click", e => {
         });
 
 
-    //    if(data[0].meanings[0].definitions[0].example){
-    //     let exampleData = data[0].meanings[0].definitions[0].example
-    //     example.innerHTML = exampleData;
-    //    }
-
-
-
     }
+
+    
 
 
 
