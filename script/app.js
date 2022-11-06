@@ -1,6 +1,9 @@
 // const formEL = document.querySelector("#form");
 const inputEl = document.querySelector("#saerch-inp");
 const BtnEl = document.querySelector("#search-btn");
+const not_found = document.querySelector("#not_found");
+const foundedWord = document.querySelector("#result-word")
+const definition_box = document.querySelector("#definition")
 
 
 BtnEl.addEventListener("click", e => {
@@ -20,10 +23,16 @@ BtnEl.addEventListener("click", e => {
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         const data  = await response.json();
         console.log(data)
+
+        if(!data.length){
+            not_found.innerText = "No results"
+            return;
+        }
+
+        foundedWord.innerText = inputEl.value;
+        
     }
 
-// fetch("https://api.dictionaryapi.dev/api/v2/entries/en/advance")
-// .then(response => response.json())
-// .then(data => console.log(data[0]))
+
 
 
